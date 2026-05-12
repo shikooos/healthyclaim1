@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Medical Billing Automation Software</title>
+    <meta name="description" content="HealthyClaim automates medical billing end-to-end. AI-powered claim scrubbing, denial management, and real-time insights to increase collections and reduce billing time.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="#top" class="logo-link">
+                <img src="healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#coming-soon">Coming Soon</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary nav-cta">Schedule a Demo</a>
+            <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Smarter Billing.<br>Faster Payments.<br><span class="text-blue">Healthier Revenue.</span></h1>
+                <p class="hero-subtitle">HealthyClaim automates your medical billing end-to-end so you can focus on what matters most &ndash; your patients.</p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+                        <div>
+                            <h3>End-to-End Automation</h3>
+                            <p>From eligibility to payment posting &ndash; we automate every step.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h3>Fewer Denials. Faster Resolution.</h3>
+                            <p>AI-powered scrubbing and denial management that improves results.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h3>Real-Time Insights</h3>
+                            <p>Powerful dashboards and reports to track performance and cash flow.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                        <div>
+                            <h3>Secure &amp; Compliant</h3>
+                            <p>HIPAA-compliant platform with enterprise-grade security.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="hero-visual">
+                <div class="dashboard-mockup">
+                    <div class="dash-sidebar">
+                        <div class="dash-brand"><i class="fa-solid fa-heart-pulse"></i> HEALTHYCLAIM</div>
+                        <ul class="dash-nav">
+                            <li class="active"><i class="fa-solid fa-house"></i> Dashboard</li>
+                            <li><i class="fa-solid fa-file-invoice"></i> Claims</li>
+                            <li><i class="fa-solid fa-user-injured"></i> Patients</li>
+                            <li><i class="fa-solid fa-credit-card"></i> Payments</li>
+                            <li><i class="fa-solid fa-triangle-exclamation"></i> Denials</li>
+                            <li><i class="fa-solid fa-file-lines"></i> Reports</li>
+                            <li><i class="fa-solid fa-robot"></i> Automation</li>
+                        </ul>
+                    </div>
+                    <div class="dash-body">
+                        <div class="dash-topbar">
+                            <strong>Dashboard</strong>
+                            <span class="dash-date">May 1 &ndash; May 31, 2024</span>
+                        </div>
+                        <div class="dash-kpis">
+                            <div class="kpi"><span class="kpi-label">Claims Submitted</span><span class="kpi-val">2,842</span><span class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 18%</span></div>
+                            <div class="kpi"><span class="kpi-label">Claims Paid</span><span class="kpi-val">2,327</span><span class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 21%</span></div>
+                            <div class="kpi"><span class="kpi-label">Collection Rate</span><span class="kpi-val">94.6%</span><span class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 6.3%</span></div>
+                            <div class="kpi"><span class="kpi-label">Amount Collected</span><span class="kpi-val">$1.28M</span><span class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 16%</span></div>
+                        </div>
+                        <div class="dash-charts">
+                            <div class="chart-box">
+                                <span class="chart-title">Collections Over Time</span>
+                                <svg viewBox="0 0 300 80" class="mini-chart">
+                                    <polyline points="0,70 50,55 100,60 150,40 200,30 250,20 300,10" fill="none" stroke="#0056D2" stroke-width="2.5"/>
+                                    <polyline points="0,70 50,55 100,60 150,40 200,30 250,20 300,10 300,80 0,80" fill="url(#chartGrad)" opacity="0.15"/>
+                                    <defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0056D2"/><stop offset="100%" stop-color="#0056D2" stop-opacity="0"/></linearGradient></defs>
+                                </svg>
+                            </div>
+                            <div class="chart-box status-chart">
+                                <span class="chart-title">Claim Status</span>
+                                <div class="donut-wrap">
+                                    <svg viewBox="0 0 36 36" class="donut">
+                                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e2e8f0" stroke-width="3"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#0056D2" stroke-width="3" stroke-dasharray="82 18" stroke-dashoffset="25"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#60a5fa" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="43"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6 94" stroke-dashoffset="53"/>
+                                    </svg>
+                                    <div class="donut-legend">
+                                        <span><i style="color:#0056D2">&#9679;</i> Paid 82%</span>
+                                        <span><i style="color:#60a5fa">&#9679;</i> Pending 10%</span>
+                                        <span><i style="color:#f59e0b">&#9679;</i> Denied 6%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dash-automation">
+                            <span class="chart-title">Automation at Work</span>
+                            <div class="auto-steps">
+                                <div class="auto-step"><i class="fa-solid fa-clipboard-check"></i><small>Eligibility Verified</small></div>
+                                <div class="auto-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="auto-step"><i class="fa-solid fa-magnifying-glass"></i><small>Claims Scrubbed</small></div>
+                                <div class="auto-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="auto-step"><i class="fa-solid fa-paper-plane"></i><small>Claims Submitted</small></div>
+                                <div class="auto-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="auto-step"><i class="fa-solid fa-list-check"></i><small>Denials Managed</small></div>
+                                <div class="auto-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                                <div class="auto-step"><i class="fa-solid fa-circle-dollar-to-slot"></i><small>Payment Posted</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== BANNER CTA ===================== -->
+    <section class="banner-cta">
+        <div class="container banner-inner">
+            <div class="banner-text">
+                <h2>Automate Today. Get Paid Tomorrow.</h2>
+                <p>HealthyClaim helps healthcare providers increase collections, reduce denials, and accelerate cash flow.</p>
+            </div>
+            <a href="#contact" class="btn btn-cta-green">
+                <span class="cta-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="cta-label"><strong>SCHEDULE A DEMO</strong><small>See the difference automation makes.</small></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== METRICS ===================== -->
+    <section class="metrics" id="features">
+        <div class="container metrics-grid">
+            <div class="metric">
+                <i class="fa-solid fa-arrow-trend-up metric-icon"></i>
+                <div><span class="metric-num">30%+</span><span class="metric-desc">Increase in Collections on Average</span></div>
+            </div>
+            <div class="metric">
+                <i class="fa-regular fa-clock metric-icon"></i>
+                <div><span class="metric-num">70-75%</span><span class="metric-desc">Reduction in Billing Time</span></div>
+            </div>
+            <div class="metric">
+                <i class="fa-solid fa-file-circle-check metric-icon"></i>
+                <div><span class="metric-num">95%+</span><span class="metric-desc">Claims Submitted Clean on First Pass</span></div>
+            </div>
+            <div class="metric">
+                <i class="fa-solid fa-sack-dollar metric-icon"></i>
+                <div><span class="metric-num">Improved</span><span class="metric-desc">Cash Flow and Revenue</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== DEMO SECTION ===================== -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Live Demo</span>
+                <h2>See HealthyClaim in Action</h2>
+                <p>Watch our real product demos showing how HealthyClaim works inside your existing EHR system &mdash; no setup needed.</p>
+            </div>
+
+            <div class="demo-tabs">
+                <button class="demo-tab-btn active" data-demo="eligibility">
+                    <i class="fa-solid fa-id-card-clip"></i> Eligibility Verification
+                </button>
+                <button class="demo-tab-btn" data-demo="prior">
+                    <i class="fa-solid fa-file-prescription"></i> Prior Authorization
+                </button>
+                <button class="demo-tab-btn" data-demo="appeal">
+                    <i class="fa-solid fa-rotate-left"></i> Claim Appeal
+                </button>
+            </div>
+
+            <div class="demo-video-wrap active" id="demo-eligibility">
+                <div class="demo-video-container">
+                    <video controls preload="metadata" poster="demo-videos/healthy-claim-demo-desktop-fixed.png">
+                        <source src="demo-videos/healthy-claim-ehr-eligibility-demo-1-3-speed.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="demo-caption"><strong>Eligibility Verification:</strong> HealthyClaim verifies patient insurance eligibility in real-time directly inside your EHR &mdash; eliminating manual lookups and reducing front-desk errors before claims are even submitted.</p>
+            </div>
+
+            <div class="demo-video-wrap" id="demo-prior">
+                <div class="demo-video-container">
+                    <video controls preload="metadata">
+                        <source src="demo-videos/healthy-claim-ehr-prior_authorization-demo-1-3-speed.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="demo-caption"><strong>Prior Authorization:</strong> Automatically identify procedures requiring prior auth, gather the right documentation, and submit to payers &mdash; saving hours of phone calls and administrative burden per case.</p>
+            </div>
+
+            <div class="demo-video-wrap" id="demo-appeal">
+                <div class="demo-video-container">
+                    <video controls preload="metadata">
+                        <source src="demo-videos/healthy-claim-ehr-claim_appeal-demo-1-3-speed.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="demo-caption"><strong>Claim Appeal:</strong> When denials happen, HealthyClaim drafts a targeted appeal letter using the denial reason code, payer-specific rules, and your clinical documentation &mdash; turning denials into recovered revenue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== COMING SOON ===================== -->
+    <section class="coming-soon" id="coming-soon">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Coming Soon</span>
+                <h2>Next Phase &mdash; What&rsquo;s Coming</h2>
+                <p>We're building the future of revenue cycle management. Here's what's on the roadmap.</p>
+            </div>
+            <div class="roadmap-grid">
+                <div class="roadmap-card">
+                    <div class="roadmap-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI Denial Prediction</h3>
+                    <p>Predict and prevent claim denials before submission using machine learning trained on millions of claims.</p>
+                </div>
+                <div class="roadmap-card">
+                    <div class="roadmap-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h3>Chrome Extension</h3>
+                    <p>A lightweight browser extension that works on top of your existing billing software to provide real-time compliance checks.</p>
+                </div>
+                <div class="roadmap-card">
+                    <div class="roadmap-icon"><i class="fa-solid fa-hospital"></i></div>
+                    <h3>Multi-Payer Integration</h3>
+                    <p>Direct integration with major payers for real-time eligibility, prior authorization, and claim status updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Whether you're a healthcare provider looking for a demo or an investor interested in our mission, we'd love to hear from you.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="demo" id="tab-demo-btn">
+                        <i class="fa-solid fa-stethoscope"></i> Request a Demo
+                    </button>
+                    <button class="tab-btn" data-tab="investor" id="tab-investor-btn">
+                        <i class="fa-solid fa-handshake"></i> Investor Inquiry
+                    </button>
+                </div>
+
+                <!-- Demo Form -->
+                <div class="tab-content active" id="tab-demo">
+                    <div class="form-card">
+                        <div class="form-info">
+                            <h3><i class="fa-solid fa-calendar-check"></i> Schedule a Demo</h3>
+                            <p>Join our demo waitlist and we'll reach out to show you how HealthyClaim can transform your revenue cycle.</p>
+                            <div class="info-items">
+                                <div class="info-item"><i class="fa-solid fa-envelope"></i> info@healthyclaim.com</div>
+                                <div class="info-item"><i class="fa-solid fa-globe"></i> www.healthyclaim.com</div>
+                            </div>
+                        </div>
+                        <form class="contact-form" action="contact.php" method="POST" id="demo-form">
+                            <input type="hidden" name="form_type" value="demo">
+                            <div class="form-group">
+                                <label for="demo-name">Full Name *</label>
+                                <input type="text" id="demo-name" name="name" placeholder="Dr. John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="demo-email">Email Address *</label>
+                                <input type="email" id="demo-email" name="email" placeholder="john@clinic.com" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="demo-org">Organization</label>
+                                    <input type="text" id="demo-org" name="organization" placeholder="ABC Medical Group">
+                                </div>
+                                <div class="form-group">
+                                    <label for="demo-role">Your Role</label>
+                                    <select id="demo-role" name="role">
+                                        <option value="">Select role...</option>
+                                        <option value="physician">Physician</option>
+                                        <option value="biller">Medical Biller/Coder</option>
+                                        <option value="practice_manager">Practice Manager</option>
+                                        <option value="rcm_director">RCM Director</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="demo-message">Tell us about your needs</label>
+                                <textarea id="demo-message" name="message" rows="3" placeholder="e.g., We process ~500 claims/month and struggle with denial rates..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fa-solid fa-paper-plane"></i> Join Demo Waitlist
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Investor Form -->
+                <div class="tab-content" id="tab-investor">
+                    <div class="form-card">
+                        <div class="form-info investor-info">
+                            <h3><i class="fa-solid fa-rocket"></i> Investment Opportunity</h3>
+                            <p>HealthyClaim is building the next generation of AI-powered revenue cycle management. We're looking for strategic partners who share our vision.</p>
+                            <div class="investor-highlights">
+                                <div class="inv-stat"><strong>$5.3T</strong><span>US Healthcare Spending (2024)</span></div>
+                                <div class="inv-stat"><strong>18%</strong><span>of US GDP &mdash; World&rsquo;s Largest Health Market</span></div>
+                                <div class="inv-stat"><strong>$262B</strong><span>Lost to Billing Errors Annually</span></div>
+                                <div class="inv-stat"><strong>AI-First</strong><span>Chrome Extension + Automation Architecture</span></div>
+                            </div>
+                            <div class="info-items">
+                                <div class="info-item"><i class="fa-solid fa-envelope"></i> info@healthyclaim.com</div>
+                            </div>
+                        </div>
+                        <form class="contact-form" action="contact.php" method="POST" id="investor-form">
+                            <input type="hidden" name="form_type" value="investor">
+                            <div class="form-group">
+                                <label for="inv-name">Full Name *</label>
+                                <input type="text" id="inv-name" name="name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inv-email">Email Address *</label>
+                                <input type="email" id="inv-email" name="email" placeholder="jane@ventures.com" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inv-firm">Firm / Organization</label>
+                                    <input type="text" id="inv-firm" name="organization" placeholder="XYZ Ventures">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inv-type">Investor Type</label>
+                                    <select id="inv-type" name="investor_type">
+                                        <option value="">Select type...</option>
+                                        <option value="angel">Angel Investor</option>
+                                        <option value="vc">Venture Capital</option>
+                                        <option value="strategic">Strategic Partner</option>
+                                        <option value="family_office">Family Office</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inv-message">Message</label>
+                                <textarea id="inv-message" name="message" rows="3" placeholder="Tell us about your investment thesis and interest in HealthTech..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+            </div>
+            <div class="footer-tagline">Built for healthcare. Focused on your success.</div>
+            <div class="footer-links">
+                <span><i class="fa-solid fa-globe"></i> www.healthyclaim.com</span>
+                <span><i class="fa-solid fa-envelope"></i> info@healthyclaim.com</span>
+            </div>
+        </div>
+        <div class="container footer-copy">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===================== SUCCESS MODAL ===================== -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-box">
+            <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Thank You!</h3>
+            <p id="modal-message">Your request has been submitted. We'll be in touch soon.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                navLinks.classList.remove('open');
+            }
+        });
+    });
+
+    // Form submission with fetch
+    document.querySelectorAll('.contact-form').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('.btn-submit');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showModal(result.message || 'Your request has been submitted successfully!');
+                    form.reset();
+                } else {
+                    showModal(result.message || 'Something went wrong. Please email us directly at info@healthyclaim.com');
+                }
+            } catch (err) {
+                showModal('Network error. Please email us directly at info@healthyclaim.com');
+            }
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    });
+
+    function showModal(msg) {
+        document.getElementById('modal-message').textContent = msg;
+        document.getElementById('success-modal').classList.add('visible');
+    }
+    function closeModal() {
+        document.getElementById('success-modal').classList.remove('visible');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Demo video tab switching
+    document.querySelectorAll('.demo-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.demo-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.demo-video-wrap').forEach(v => {
+                v.classList.remove('active');
+                // Pause any playing video when switching tabs
+                const vid = v.querySelector('video');
+                if (vid) vid.pause();
+            });
+            btn.classList.add('active');
+            document.getElementById('demo-' + btn.dataset.demo).classList.add('active');
+        });
+    });
+
+    // Check for URL param success
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+        showModal('Thank you! Your submission has been received. We will contact you soon.');
+    }
+    </script>
+
+</body>
+</html>
