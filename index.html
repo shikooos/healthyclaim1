@@ -286,7 +286,8 @@
                                 <div class="info-item"><i class="fa-solid fa-globe"></i> www.healthyclaim.com</div>
                             </div>
                         </div>
-                        <form class="contact-form" action="contact.php" method="POST" id="demo-form">
+                        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="demo-form">
+                            <input type="hidden" name="access_key" value="5879ccc0-9825-4176-bcc5-4dac51fe4439">
                             <input type="hidden" name="form_type" value="demo">
                             <div class="form-group">
                                 <label for="demo-name">Full Name *</label>
@@ -340,7 +341,8 @@
                                 <div class="info-item"><i class="fa-solid fa-envelope"></i> info@healthyclaim.com</div>
                             </div>
                         </div>
-                        <form class="contact-form" action="contact.php" method="POST" id="investor-form">
+                        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="investor-form">
+                            <input type="hidden" name="access_key" value="5879ccc0-9825-4176-bcc5-4dac51fe4439">
                             <input type="hidden" name="form_type" value="investor">
                             <div class="form-group">
                                 <label for="inv-name">Full Name *</label>
@@ -451,7 +453,7 @@
 
             try {
                 const formData = new FormData(form);
-                const response = await fetch('contact.php', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 });
