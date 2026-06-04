@@ -1,0 +1,11 @@
+# HealthyClaim - AI-Powered Medical Billing Automation Startup
+# https://healthyclaim.com
+
+User-agent: *
+Allow: /
+Disallow: /check_ftp.py
+Disallow: /deploy.py
+Disallow: /deploy_logo.py
+Disallow: /force_deploy.py
+
+Sitemap: https://healthyclaim.com/sitemap.xml
