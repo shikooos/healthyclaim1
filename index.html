@@ -637,101 +637,62 @@
     </section>
     -->
 
-    <!-- ===================== SECURITY & HIPAA REGULATORY APPROVALS ===================== -->
+    <!-- ===================== SECURITY & HIPAA ===================== -->
     <section class="section security-section" id="security">
         <div class="container">
             <div class="section-header text-center">
-                <span class="badge badge-primary"><i class="fa-solid fa-shield-halved"></i> Healthcare Regulatory Approvals</span>
-                <h2 class="section-title">HIPAA, HITECH &amp; PHI Protected Architecture</h2>
+                <span class="badge badge-primary"><i class="fa-solid fa-shield-halved"></i> Enterprise Security</span>
+                <h2 class="section-title">Built for Healthcare. HIPAA Certified. Zero Data Leakage.</h2>
                 <p class="section-subtitle">
-                    HealthyClaim is built strictly for covered entities and business associates under federal healthcare privacy mandates. All patient health information (PHI) is cryptographically isolated and never shared or trained upon.
+                    Patient records are isolated per practice, protected under signed BAA agreements, and never used for any purpose beyond your billing workflow.
                 </p>
             </div>
 
-            <div class="security-card">
-                <div class="sec-left">
-                    <div class="sec-badge"><i class="fa-solid fa-certificate text-green"></i> Certified Healthcare Security Protocol</div>
-                    <h2>Your Patient Data (PHI) Stays Sovereign. Zero AI Training.</h2>
-                    <p>
-                        We operate under strict HIPAA Title II, HITECH Act, and SOC-2 security protocols. Protected Health Information (PHI) is partitioned per-tenant with PostgreSQL Row-Level Security (RLS), encrypted with AES-256 at rest and TLS 1.3 in transit, and never exposed to public AI models.
-                    </p>
-                    <div class="sec-tags">
-                        <span class="sec-tag"><i class="fa-solid fa-lock"></i> HIPAA Title II Compliant</span>
-                        <span class="sec-tag"><i class="fa-solid fa-file-signature"></i> BAA Pre-Approved</span>
-                        <span class="sec-tag"><i class="fa-solid fa-user-shield"></i> PHI Safe Harbor Protocol</span>
-                        <span class="sec-tag"><i class="fa-solid fa-shield-virus"></i> HITECH Act Aligned</span>
-                        <span class="sec-tag"><i class="fa-solid fa-database"></i> Row-Level Security (RLS)</span>
-                        <span class="sec-tag"><i class="fa-solid fa-clock-rotate-left"></i> Immutable Audit Trail</span>
-                    </div>
+            <div class="trust-badge-grid">
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-shield-halved trust-icon text-primary"></i>
+                    <div class="trust-label">HIPAA Compliant</div>
+                    <div class="trust-sub">Full Title II certification</div>
                 </div>
-                <div class="sec-right">
-                    <div class="sec-box">
-                        <div class="sec-box-title"><i class="fa-solid fa-building-shield text-primary"></i> Multi-Tenant Cryptographic Isolation</div>
-                        <p>Complete tenant-level segregation ensuring each clinic, provider, and billing company operates in an isolated cryptographic workspace with per-tenant key rotation.</p>
-                    </div>
-                    <div class="sec-box">
-                        <div class="sec-box-title"><i class="fa-solid fa-file-shield text-green"></i> Deterministic Auditability &amp; Chain of Custody</div>
-                        <p>Every generated claim line links to explicit statutory policy citations (CMS LCD/NCD, NCCI, MUE), ensuring defensibility during external payer audits.</p>
-                    </div>
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-file-signature trust-icon text-green"></i>
+                    <div class="trust-label">BAA Included</div>
+                    <div class="trust-sub">Signed automatically on account creation</div>
                 </div>
-            </div>
-
-            <!-- 4-Pillar Regulatory Approval Grid -->
-            <div class="hipaa-grid">
-                <div class="hipaa-card">
-                    <div class="hipaa-icon"><i class="fa-solid fa-shield-halved text-primary"></i></div>
-                    <h4>HIPAA Security Rule (45 CFR § 164.312)</h4>
-                    <p>Technical and physical safeguards including AES-256 data-at-rest encryption, TLS 1.3 in-transit tunnels, and automated session timeouts.</p>
-                    <span class="hipaa-tag"><i class="fa-solid fa-check text-green"></i> Certified Technical Safeguards</span>
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-ban trust-icon text-danger"></i>
+                    <div class="trust-label">Zero AI Training</div>
+                    <div class="trust-sub">Your data trains nothing. Ever.</div>
                 </div>
-                <div class="hipaa-card">
-                    <div class="hipaa-icon"><i class="fa-solid fa-user-lock text-accent"></i></div>
-                    <h4>PHI Safe Harbor De-Identification (§ 164.514)</h4>
-                    <p>Real-time redaction and tokenization of 18 HIPAA identifiers prior to ephemeral AI reasoning, guaranteeing zero PHI caching in model memory.</p>
-                    <span class="hipaa-tag"><i class="fa-solid fa-check text-green"></i> Ephemeral Zero-Retention</span>
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-lock trust-icon text-accent"></i>
+                    <div class="trust-label">PHI Protected</div>
+                    <div class="trust-sub">Patient identity never leaves your workspace</div>
                 </div>
-                <div class="hipaa-card">
-                    <div class="hipaa-icon"><i class="fa-solid fa-file-contract text-green"></i></div>
-                    <h4>Automated BAA Execution (§ 164.502(e))</h4>
-                    <p>Standard Business Associate Agreements (BAA) are executed electronically upon workspace creation, legally binding our infrastructure to covered entity protection.</p>
-                    <span class="hipaa-tag"><i class="fa-solid fa-check text-green"></i> Direct Legal BAA Coverage</span>
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-building-shield trust-icon text-primary"></i>
+                    <div class="trust-label">Practice Isolation</div>
+                    <div class="trust-sub">Every clinic is a sealed private environment</div>
                 </div>
-                <div class="hipaa-card">
-                    <div class="hipaa-icon"><i class="fa-solid fa-fingerprint text-primary"></i></div>
-                    <h4>HITECH Act &amp; Tamper-Proof Audit (§ 164.308)</h4>
-                    <p>Continuous cryptographic audit logging tracking all note uploads, rule evaluations, modifier determinations, and claim downloads.</p>
-                    <span class="hipaa-tag"><i class="fa-solid fa-check text-green"></i> Immutable Chain of Custody</span>
+                <div class="trust-badge-card">
+                    <i class="fa-solid fa-clock-rotate-left trust-icon text-green"></i>
+                    <div class="trust-label">Full Audit Trail</div>
+                    <div class="trust-sub">Every claim action is logged and traceable</div>
                 </div>
             </div>
 
-            <!-- Mandatory ToS & No-Training Disclaimer Box -->
-            <div class="legal-disclaimer-card">
-                <div class="disclaimer-header">
-                    <div class="disclaimer-title-wrap">
-                        <i class="fa-solid fa-scale-balanced text-accent"></i>
-                        <div>
-                            <h4>Terms of Service &amp; AI Data Sovereignty Policy</h4>
-                            <span class="disclaimer-sub">Strict Contractual Zero-Training Guarantee</span>
-                        </div>
+            <!-- Zero Training strip -->
+            <div class="zero-training-strip">
+                <div class="zt-left">
+                    <i class="fa-solid fa-scale-balanced zt-icon"></i>
+                    <div>
+                        <div class="zt-title">Your clinical data is 100% yours — forever.</div>
+                        <div class="zt-sub">HealthyClaim contractually prohibits use of any clinical notes, records, or billing data for any purpose other than your own billing workflow.</div>
                     </div>
-                    <button class="btn btn-sm btn-outline-nav" onclick="openTosModal()">
-                        <i class="fa-solid fa-up-right-from-square"></i> View Full ToS &amp; BAA
-                    </button>
                 </div>
-                <div class="disclaimer-body">
-                    <p>
-                        <strong>Zero-Training Guarantee (§4.2 ToS):</strong> Under our binding Terms of Service and standard HIPAA Business Associate Agreements (BAA), <strong>HealthyClaim strictly prohibits the use of any customer clinical documentation, patient records, SOAP notes, operative reports, diagnostic codes, or encounter metadata for training, fine-tuning, or enhancing public, commercial, or foundational artificial intelligence models.</strong>
-                    </p>
-                    <p>
-                        All AI processing is strictly ephemeral and confined to deterministic fact extraction. Your clinical IP and Protected Health Information (PHI) remain 100% your sovereign property and will never contribute to any third-party model weights.
-                    </p>
-                </div>
-                <div class="disclaimer-footer">
-                    <span class="disc-pill"><i class="fa-solid fa-ban text-danger"></i> No Model Training</span>
-                    <span class="disc-pill"><i class="fa-solid fa-microchip text-primary"></i> Ephemeral Inference Only</span>
-                    <span class="disc-pill"><i class="fa-solid fa-file-signature text-green"></i> HIPAA BAA Included</span>
-                    <span class="disc-pill"><i class="fa-solid fa-user-shield text-accent"></i> 100% Provider IP Ownership</span>
-                </div>
+                <button class="btn btn-outline-nav btn-sm" onclick="openTosModal()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Our Data Policy
+                </button>
             </div>
         </div>
     </section>
@@ -952,51 +913,48 @@
     <div class="modal-overlay" id="tos-modal">
         <div class="modal-box modal-lg">
             <div class="modal-header-bar">
-                <div class="modal-title"><i class="fa-solid fa-shield-halved text-primary"></i> Terms of Service &amp; AI Data Policy</div>
+                <div class="modal-title"><i class="fa-solid fa-shield-halved text-primary"></i> Data Privacy &amp; AI Policy</div>
                 <button class="modal-close-btn" onclick="closeTosModal()">&times;</button>
             </div>
             <div class="tos-content-scroll">
                 <div class="tos-section-block">
-                    <h4>1. Strict Zero-Training Commitment on Customer Data (§4.2)</h4>
+                    <h4>1. Zero AI Training Guarantee</h4>
                     <p>
-                        <strong>Under no circumstances will HealthyClaim, its parent company, or its technology sub-processors use any customer-submitted data (including clinical notes, SOAP transcripts, operative reports, patient demographics, diagnosis codes, or encounter files) to train, re-train, fine-tune, or evaluate public or proprietary Artificial Intelligence (AI) / Machine Learning (ML) models or Large Language Models (LLMs).</strong>
-                    </p>
-                    <p>
-                        All AI reasoning operates in zero-retention, ephemeral inference mode. Once clinical entity extraction and deterministic adjudication are finalized, the raw text is not retained in any model memory or training cache.
+                        <strong>HealthyClaim will never use your clinical notes, patient records, billing data, or any submitted content to train, improve, or evaluate any AI or machine learning model.</strong> This applies to HealthyClaim, its affiliates, and any third-party processors.
                     </p>
                 </div>
 
                 <div class="tos-section-block">
-                    <h4>2. Customer Intellectual Property &amp; PHI Sovereignty (§4.3)</h4>
+                    <h4>2. Your Data Belongs to You</h4>
                     <p>
-                        The Provider / Customer retains 100% full, exclusive ownership and title to all patient health information, uploaded clinical records, customized fee schedules, and generated billing artifacts (CMS-1500, UB-04, ANSI 837).
+                        All clinical records, generated claims, and patient information uploaded to HealthyClaim remain your sole property. We do not sell, license, or share your data with any party other than as required to deliver your billing service.
                     </p>
                 </div>
 
                 <div class="tos-section-block">
-                    <h4>3. HIPAA Compliance &amp; Business Associate Agreement (BAA) (§5.1)</h4>
+                    <h4>3. HIPAA Compliance &amp; BAA</h4>
                     <p>
-                        HealthyClaim operates in full compliance with the Health Insurance Portability and Accountability Act of 1996 (HIPAA) and the HITECH Act. Standard Business Associate Agreements (BAA) under 45 CFR § 164.502(e) are automatically executed with all covered entities upon workspace activation. Data is encrypted using AES-256 at rest and TLS 1.3 in transit with per-tenant Row-Level Security (RLS).
+                        HealthyClaim operates in full compliance with HIPAA. A Business Associate Agreement (BAA) is automatically executed when you create an account, ensuring your practice is fully covered under federal healthcare privacy law.
                     </p>
                 </div>
 
                 <div class="tos-section-block">
-                    <h4>4. PHI Safe Harbor &amp; Ephemeral Processing Protocol (§5.2)</h4>
+                    <h4>4. PHI is Never Exposed</h4>
                     <p>
-                        All clinical entity recognition strictly complies with 45 CFR § 164.514(b) (Safe Harbor Method). Direct patient identifiers are parsed ephemerally in isolated secure memory spaces, never stored in shared memory, and never indexed for marketing, analytics, or third-party transfer.
+                        Patient health information processed through HealthyClaim is handled strictly within your private workspace. It is never accessible to other accounts, never stored beyond your session needs, and never transferred to third parties for any secondary purpose.
                     </p>
                 </div>
 
                 <div class="tos-section-block">
-                    <h4>5. Deterministic Clinical Adjudication Guarantee (§6.0)</h4>
+                    <h4>5. Billing Accuracy Guarantee</h4>
                     <p>
-                        Billing decisions, modifier assignments, and NCCI/MUE conflict checks are computed using statutory deterministic rule engines referencing official CMS and statutory payer fee schedules, completely eliminating non-deterministic AI hallucinations.
+                        Every claim produced by HealthyClaim is validated against official federal coding guidelines and payer policies. Our system does not guess — it references authoritative sources only, giving you defensible, auditable claim output every time.
                     </p>
                 </div>
             </div>
             <div class="modal-footer-bar">
-                <span class="text-muted"><i class="fa-solid fa-lock text-green"></i> HIPAA, HITECH &amp; BAA Certified &bull; Updated August 2026</span>
-                <button class="btn btn-primary" onclick="closeTosModal()">I Understand &amp; Agree</button>
+                <span class="text-muted"><i class="fa-solid fa-lock text-green"></i> HIPAA Certified &bull; Updated August 2026</span>
+                <button class="btn btn-primary" onclick="closeTosModal()">I Understand</button>
             </div>
         </div>
     </div>
