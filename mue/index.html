@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Medically Unlikely Edits (MUE) Explained — Deterministic Unit Adjudication</title>
+    <meta name="description" content="A technical guide to CMS Medically Unlikely Edits (MUE), practitioner unit ceilings, MUE Adjudication Indicators (MAI 1, 2, 3), and deterministic unit validation in medical claims.">
+    <meta name="keywords" content="MUE medical billing, CMS Medically Unlikely Edits, MAI adjudication indicators, MUE unit caps, practitioner MUE, automated MUE checking">
+    <meta property="og:title" content="HealthyClaim | Medically Unlikely Edits (MUE) Explained">
+    <meta property="og:description" content="Technical guide to CMS MUE unit caps, MAI adjudication indicators, and deterministic unit adjudication in medical claims.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/mue/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/mue/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MUE Edits",
+          "item": "https://healthyclaim.com/mue/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Technical Reference</span>
+            <span class="announcement-text"><strong>Authoritative Reference:</strong> CMS Medically Unlikely Edits (MUE) Adjudication.</span>
+            <a href="/methodology/" class="announcement-link">View Pipeline <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-book-bookmark"></i> Coding Policy Reference</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                Medically Unlikely Edits (MUE) Explained
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                Understanding CMS unit-of-service limits, MUE Adjudication Indicators (MAI), line vs. date-of-service enforcement, and deterministic unit validation.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Written by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Reviewed by:</strong> HealthyClaim Billing Research</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Last Updated:</strong> September 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container" style="max-width: 900px;">
+            
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">1. What Are Medically Unlikely Edits (MUE)?</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    A Medically Unlikely Edit (MUE) is a unit-of-service (UOS) limit set by the Centers for Medicare &amp; Medicaid Services (CMS) for a HCPCS or CPT code. An MUE defines the maximum number of units that a provider would report under most circumstances for a single beneficiary on a single date of service.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    MUEs are designed to prevent clerical data entry errors and unreasonable unit billing (such as billing 10 appendectomies or 50 chest X-rays on a single day).
+                </p>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">2. MUE Adjudication Indicators (MAI)</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Every published MUE has an associated MUE Adjudication Indicator (MAI) that dictates how Medicare Administrative Contractors (MACs) and clearinghouses enforce the limit:
+                </p>
+                
+                <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--text);">
+                        <li><strong>MAI 1 (Claim Line Edit):</strong> The limit is enforced on each individual claim line. If multiple lines are reported with separate modifiers (such as distinct anatomical sites), each line is evaluated independently up to the MUE cap.</li>
+                        <li><strong>MAI 2 (Absolute Date of Service Edit):</strong> The limit is based on strict anatomical or clinical impossibility (e.g., bilateral organs or unique anatomical structures). This is an absolute ceiling across all claim lines for that DOS. Units exceeding an MAI 2 cap cannot be appealed or bypassed.</li>
+                        <li><strong>MAI 3 (Clinical Date of Service Edit):</strong> The limit represents clinical practice benchmarks across all claim lines for the DOS. While initially denied if exceeded, legitimate clinical exceptions can be appealed with supporting clinical documentation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">3. Where Automated Systems Fail</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Generic AI coding systems often fail on MUE enforcement:
+                </p>
+                <ol style="padding-left: 20px; line-height: 1.8; color: var(--text); margin-bottom: 16px;">
+                    <li><strong>Line-Splitting Violations:</strong> When a procedure exceeds the unit limit, some tools naively split the units across multiple claim lines without realizing the code is governed by MAI 2 or MAI 3 (DOS-level cap), causing automatic claim rejections.</li>
+                    <li><strong>Therapy 8-Minute Rule Mishandling:</strong> For timed physical or occupational therapy (CPT 97110, 97140), models often misallocate remaining minutes across codes rather than respecting the total timed unit ceiling.</li>
+                </ol>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">4. HealthyClaim's Deterministic Approach</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    HealthyClaim evaluates MUE caps through compiled deterministic logic:
+                </p>
+                <div style="background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 20px; border-radius: 6px; margin-bottom: 16px;">
+                    <p style="margin: 0; line-height: 1.7; color: var(--text);">
+                        <strong>Practitioner &amp; Facility Scoping:</strong> Loads practitioner MUE tables for professional claims (CMS-1500 / 837P) and outpatient hospital MUE tables for institutional claims.<br>
+                        <strong>MAI Aggregation:</strong> For MAI 2 and MAI 3 codes, units are summed across all claim lines for the date of service before evaluating against the cap.<br>
+                        <strong>Fail-Closed Notification:</strong> If documented units legitimately exceed an MAI 3 cap, the system generates the allowable units and flags an unbilled remainder with structured appeal documentation notes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Source & Limitations -->
+            <div style="background: var(--bg); padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-top: 40px;">
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-scale-balanced text-primary"></i> Authoritative Source Scope</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    <strong>Source Scope:</strong> CMS National Correct Coding Initiative (NCCI) Medically Unlikely Edits (MUE) tables for Practitioners and Outpatient Hospital Services. Published quarterly by CMS.<br>
+                    <strong>Disclaimer:</strong> This technical overview is intended for technical evaluation and research demonstration. It does not constitute billing or legal advice.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Topic Clusters</h4>
+                <ul>
+                    <li><a href="/ncci/">NCCI Edits</a></li>
+                    <li><a href="/mue/">MUE Caps</a></li>
+                    <li><a href="/modifier-25/">Modifier 25</a></li>
+                    <li><a href="/modifier-59/">Modifier 59</a></li>
+                    <li><a href="/cms-1500/">CMS-1500</a></li>
+                    <li><a href="/837p/">EDI 837P</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

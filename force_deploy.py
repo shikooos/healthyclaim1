@@ -1,9 +1,9 @@
 import ftplib
 import os
 
-FTP_HOST = "panel.freehosting.com"
-FTP_USER = "healthyc"
-FTP_PASS = "5xll096QjQ"
+FTP_HOST = os.getenv("FTP_HOST", "panel.freehosting.com")
+FTP_USER = os.getenv("FTP_USER", "")
+FTP_PASS = os.getenv("FTP_PASS", "")
 LOCAL_DIR = r"e:\ClearClaim\website"
 
 def force_deploy():

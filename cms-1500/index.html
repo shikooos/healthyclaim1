@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | CMS-1500 Claim Generation Explained — From Clinical Notes to Claim Form</title>
+    <meta name="description" content="Technical guide to automated CMS-1500 claim form generation: clinical fact mapping, Box 21 diagnosis pointers, Box 24 service line adjudication, and draft PDF generation.">
+    <meta name="keywords" content="CMS-1500 claim generation, CMS-1500 form 02/12, automated medical billing CMS-1500, diagnosis pointer mapping, Box 24 CPT modifiers, draft CMS-1500 PDF">
+    <meta property="og:title" content="HealthyClaim | CMS-1500 Claim Generation Explained">
+    <meta property="og:description" content="Technical guide to generating compliant CMS-1500 claim artifacts from raw clinical documentation.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/cms-1500/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/cms-1500/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CMS-1500 Claim Generation",
+          "item": "https://healthyclaim.com/cms-1500/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Technical Reference</span>
+            <span class="announcement-text"><strong>Authoritative Reference:</strong> CMS-1500 (02/12) Field Mapping &amp; Adjudication.</span>
+            <a href="/methodology/" class="announcement-link">View Pipeline <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-book-bookmark"></i> Claim Artifact Reference</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                CMS-1500 Claim Generation Explained
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                How clinical documentation transforms into compliant CMS-1500 (02/12) claim forms: diagnosis pointer mapping, line-item adjudication, and draft artifact generation.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Written by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Reviewed by:</strong> HealthyClaim Billing Research</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Last Updated:</strong> September 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container" style="max-width: 900px;">
+            
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">1. What Is the CMS-1500 Form?</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    The <strong>CMS-1500 claim form</strong> (officially the National Uniform Claim Committee NUCC 02/12 form) is the standard paper claim form used by healthcare professionals and suppliers to bill Medicare, Medicaid, and private insurance companies for professional services.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Even in an era dominated by electronic EDI 837P transactions, the CMS-1500 remains the visual gold standard for medical claim scrubbing, appeal packets, and provider auditing.
+                </p>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">2. Key Clinical Mapping Requirements</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Accurately converting clinical notes into a CMS-1500 requires strict adherence to NUCC instructions across critical data blocks:
+                </p>
+                
+                <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--text);">
+                        <li><strong>Box 21 (Diagnosis Codes):</strong> Accommodates up to 12 ICD-10-CM diagnosis codes (Lines A through L). The primary diagnosis representing the chief medical necessity must be entered in Line A.</li>
+                        <li><strong>Box 24E (Diagnosis Pointers):</strong> Each service line must link 1 to 4 letter pointers (A–L) identifying which diagnoses justify that specific procedure. Pointing procedures to irrelevant diagnoses is a primary cause of medical necessity rejections.</li>
+                        <li><strong>Box 24D (Procedures &amp; Modifiers):</strong> Up to 4 modifiers per service line, sequenced correctly (pricing/reimbursement modifiers first, informational/anatomical modifiers second).</li>
+                        <li><strong>Box 24B (Place of Service - POS):</strong> Dictates whether facility or non-facility RVU fee schedules apply.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">3. Common Automation Failures</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Automated claim generators often produce non-compliant CMS-1500 outputs:
+                </p>
+                <ol style="padding-left: 20px; line-height: 1.8; color: var(--text); margin-bottom: 16px;">
+                    <li><strong>Shotgun Diagnosis Pointing:</strong> Naively pointing every service line to all 12 diagnoses (e.g., "ABCD") rather than linking specific clinical indications to corresponding procedures.</li>
+                    <li><strong>Z-Code Primary Linkage:</strong> Incorrectly listing status or history Z-codes as the primary diagnosis for active diagnostic tests, triggering instant clearinghouse rejections.</li>
+                    <li><strong>Modifier Truncation:</strong> Losing critical modifiers due to formatting errors in Box 24D.</li>
+                </ol>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">4. HealthyClaim's Draft Artifact Pipeline</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    HealthyClaim ensures deterministic accuracy in every generated claim form:
+                </p>
+                <div style="background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 20px; border-radius: 6px; margin-bottom: 16px;">
+                    <p style="margin: 0; line-height: 1.7; color: var(--text);">
+                        <strong>Medical Necessity Pointer Engine:</strong> Uses authoritative LCD/NCD coverage policies to match each procedure to its exact qualifying ICD-10-CM code in Box 21.<br>
+                        <strong>Deterministic Modifier Sequencing:</strong> Sequences pricing modifiers (e.g., 25, 50) ahead of informational modifiers (e.g., RT, LT) per NUCC rules.<br>
+                        <strong>Direct PDF Rendering:</strong> Generates pixel-accurate, draft CMS-1500 PDFs structured for visual audit, testing, and pre-clearinghouse review.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Source & Limitations -->
+            <div style="background: var(--bg); padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-top: 40px;">
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-scale-balanced text-primary"></i> Authoritative Source Scope</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    <strong>Source Scope:</strong> National Uniform Claim Committee (NUCC) 1500 Reference Instruction Manual (Version 12.0); CMS Medicare Claims Processing Manual Chapter 26.<br>
+                    <strong>Disclaimer:</strong> This technical overview is intended for research and demonstration purposes. Generated claim forms are draft artifacts for testing.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Topic Clusters</h4>
+                <ul>
+                    <li><a href="/ncci/">NCCI Edits</a></li>
+                    <li><a href="/mue/">MUE Caps</a></li>
+                    <li><a href="/modifier-25/">Modifier 25</a></li>
+                    <li><a href="/modifier-59/">Modifier 59</a></li>
+                    <li><a href="/cms-1500/">CMS-1500</a></li>
+                    <li><a href="/837p/">EDI 837P</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | EDI 837P Transaction Structure Explained — Automated Claim Generation</title>
+    <meta name="description" content="A technical guide to ANSI ASC X12 837P Professional EDI transactions: 5010 loops, SV1 service lines, hierarchical levels, and automated claim generation from clinical notes.">
+    <meta name="keywords" content="EDI 837P explained, 837 professional claim, ANSI X12 5010, 837P loop 2300, SV1 segment EDI, automated 837P claim generation">
+    <meta property="og:title" content="HealthyClaim | EDI 837P Transaction Structure Explained">
+    <meta property="og:description" content="Technical guide to ANSI ASC X12 837P EDI transactions, 5010 loops, and automated claim artifact generation.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/837p/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/837p/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "EDI 837P",
+          "item": "https://healthyclaim.com/837p/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Technical Reference</span>
+            <span class="announcement-text"><strong>Authoritative Reference:</strong> ANSI ASC X12 837P (5010) Structure &amp; Generation.</span>
+            <a href="/methodology/" class="announcement-link">View Pipeline <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-code"></i> EDI Specification Reference</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                EDI 837P Transaction Structure Explained
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                Understanding ANSI ASC X12 837 Professional (5010) electronic claim transactions: hierarchical loops, SV1 segments, structural validation, and automated artifact generation.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Written by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Reviewed by:</strong> HealthyClaim Billing Research</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Last Updated:</strong> September 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container" style="max-width: 900px;">
+            
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">1. What Is an EDI 837P Claim?</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    The <strong>ANSI ASC X12N 837P (Health Care Claim: Professional)</strong> standard is the mandatory electronic data interchange (EDI) format under HIPAA for submitting healthcare claims for professional services rendered by physicians, suppliers, and independent clinics.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Version <strong>005010X222A1</strong> establishes the strict syntax, segment delimiters, and loop hierarchies required by clearinghouses and payers across the United States.
+                </p>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">2. Core Hierarchical Structure (Loops)</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    An 837P file is structured into nested Hierarchical Level (HL) loops that establish patient and provider relationships:
+                </p>
+                
+                <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--text);">
+                        <li><strong>Loop 2000A (Billing Provider HL):</strong> Identifies the billing entity (NPI, Tax ID, address). Contains Loop 2010AA (Billing Provider Name).</li>
+                        <li><strong>Loop 2000B (Subscriber HL):</strong> Identifies the insured individual (Member ID, policy group, payer name in Loop 2010BB).</li>
+                        <li><strong>Loop 2000C (Patient HL):</strong> Used when the patient is a dependent of the subscriber.</li>
+                        <li><strong>Loop 2300 (Claim Information):</strong> Contains the CLM segment (claim ID, total charge, POS), HI segments (ICD-10-CM diagnosis codes), and attending/referring physician loops.</li>
+                        <li><strong>Loop 2400 (Service Line):</strong> Contains the SV1 segment (CPT/HCPCS code, billed amount, units, diagnosis pointers), DTP segments (date of service), and drug identification loops (LIN/CTP for NDC numbers).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">3. The SV1 Segment &amp; Service Line Anatomy</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    The heart of procedural billing in EDI 837P is the <code>SV1</code> segment within Loop 2400:
+                </p>
+                <div style="background: #1e293b; color: #f8fafc; font-family: 'JetBrains Mono', monospace; padding: 16px; border-radius: 6px; font-size: 0.9rem; overflow-x: auto; margin-bottom: 16px;">
+                    SV1*HC:99214:25*175.00*UN*1***1:2~
+                </div>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                    <strong>Breakdown:</strong> <code>HC:99214:25</code> (Healthcare code + Modifier 25) * <code>175.00</code> (Line charge) * <code>UN*1</code> (1 Unit of Service) * <code>1:2</code> (Diagnosis pointers to Box 21 diagnoses 1 and 2).
+                </p>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">4. HealthyClaim's Deterministic EDI Engine</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    HealthyClaim constructs draft EDI 837P artifacts through strict schema validation:
+                </p>
+                <div style="background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 20px; border-radius: 6px; margin-bottom: 16px;">
+                    <p style="margin: 0; line-height: 1.7; color: var(--text);">
+                        <strong>5010 Structural Integrity:</strong> Ensures all mandatory loops, control segments (ISA, GS, ST, SE, GE, IEA), and element lengths strictly satisfy WEDI/SNIP Level 1 and Level 2 clearinghouse specifications.<br>
+                        <strong>Automated Pointer Mapping:</strong> Links SV1 composite diagnosis pointers directly to documented clinical indications.<br>
+                        <strong>Draft Artifact Generation:</strong> Generates standards-compliant draft <code>.edi</code> files ready for clearinghouse simulator testing and pre-submission audit.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Source & Limitations -->
+            <div style="background: var(--bg); padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-top: 40px;">
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-scale-balanced text-primary"></i> Authoritative Source Scope</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    <strong>Source Scope:</strong> ASC X12 Standards for Electronic Data Interchange (Technical Report Type 3: Health Care Claim: Professional 005010X222A1); Washington Publishing Company (WPC).<br>
+                    <strong>Disclaimer:</strong> This technical guide is intended for research and engineering evaluation. HealthyClaim produces draft EDI artifacts for testing and does not operate as an active live production clearinghouse.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Topic Clusters</h4>
+                <ul>
+                    <li><a href="/ncci/">NCCI Edits</a></li>
+                    <li><a href="/mue/">MUE Caps</a></li>
+                    <li><a href="/modifier-25/">Modifier 25</a></li>
+                    <li><a href="/modifier-59/">Modifier 59</a></li>
+                    <li><a href="/cms-1500/">CMS-1500</a></li>
+                    <li><a href="/837p/">EDI 837P</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

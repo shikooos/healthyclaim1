@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Research &amp; Engineering — Deterministic Medical Coding</title>
+    <meta name="description" content="Technical research papers and architecture studies on separating AI clinical evidence extraction from deterministic medical coding verification and claim generation.">
+    <meta name="keywords" content="medical coding research, deterministic AI, closed-world verification, NCCI unbundling research, healthcare NLP, AI billing architecture">
+    <meta property="og:title" content="HealthyClaim | Research &amp; Engineering">
+    <meta property="og:description" content="Explore research papers on deterministic medical coding architectures, closed-world verification, and evidence-first adjudication.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/research/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/research/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Research",
+          "item": "https://healthyclaim.com/research/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Public Preview</span>
+            <span class="announcement-text"><strong>Research &amp; Engineering:</strong> Foundational Papers on Deterministic Healthcare AI.</span>
+            <a href="/demo/" class="announcement-link">Explore Interactive Demo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/" class="active">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/methodology/" class="btn btn-outline-nav">Methodology</a>
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-book-open"></i> Technical Research</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                HealthyClaim Engineering &amp; Architecture Research
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                Technical whitepapers on medical coding architectures, closed-world verification, and the mathematical necessity of separating linguistic extraction from deterministic billing adjudication.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Published by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Review Track:</strong> Healthcare Revenue Cycle Systems</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Series:</strong> 2026 Public Preview Papers</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== RESEARCH ARTICLES ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container">
+
+            <!-- Paper 1 -->
+            <article style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 36px; margin-bottom: 36px; box-shadow: var(--shadow);">
+                <span class="badge badge-accent" style="margin-bottom: 12px;">Paper 01 &bull; System Architecture</span>
+                <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+                    AI Medical Coding: Why Evidence Extraction and Code Adjudication Must Be Separated
+                </h2>
+                <div style="display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                    <span><strong>Authors:</strong> HealthyClaim Engineering</span>
+                    <span>&bull;</span>
+                    <span><strong>Reviewed:</strong> September 2026</span>
+                    <span>&bull;</span>
+                    <span><strong>Topic:</strong> Architecture Isolation</span>
+                </div>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 16px;">
+                    <strong>Abstract:</strong> Modern Large Language Models (LLMs) excel at natural language comprehension and semantic synthesis. However, deploying them directly as end-to-end medical coding systems introduces critical failure modes: probabilistic hallucinations of unperformed procedures, inability to guarantee compliance with statutory NCCI unbundling rules, and non-deterministic behavior across identical patient charts.
+                </p>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 20px;">
+                    This paper outlines the architectural necessity of isolating the pipeline into two distinct components: a bounded linguistic extraction model that identifies documented clinical observations, and a compiled, deterministic rules engine that performs all subsequent CPT, ICD-10-CM, and modifier adjudication against official CMS and AMA datasets.
+                </p>
+                <div style="background: var(--bg); padding: 16px; border-radius: 8px; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Core Finding:</strong> Separating extraction from adjudication eliminates direct LLM code hallucination and enables byte-for-byte deterministic replay across identical clinical inputs.
+                </div>
+            </article>
+
+            <!-- Paper 2 -->
+            <article style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 36px; margin-bottom: 36px; box-shadow: var(--shadow);">
+                <span class="badge badge-accent" style="margin-bottom: 12px;">Paper 02 &bull; Comparative Analysis</span>
+                <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+                    Deterministic Medical Coding vs. LLM-Only Coding: A Verification Architecture Comparison
+                </h2>
+                <div style="display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                    <span><strong>Authors:</strong> HealthyClaim Engineering &amp; Billing Research</span>
+                    <span>&bull;</span>
+                    <span><strong>Reviewed:</strong> September 2026</span>
+                    <span>&bull;</span>
+                    <span><strong>Topic:</strong> Empirical Benchmarks</span>
+                </div>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 16px;">
+                    <strong>Abstract:</strong> We compare two prevailing paradigms in automated revenue cycle management: (1) Single-prompt or multi-agent LLM systems where the model directly produces billing line items, and (2) Dual-stage architectures where the LLM is restricted to fact extraction and deterministic software evaluates NCCI, MUE, and LCD criteria.
+                </p>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 20px;">
+                    Through synthetic case analysis, we demonstrate that LLM-only systems exhibit significant error rates in modifier bypass determination (e.g., inappropriately appending Modifier 59 without anatomical distinctness) and frequently violate MUE unit ceilings. Deterministic verification engines achieve 100% adherence to published NCCI and MUE logic.
+                </p>
+                <div style="background: var(--bg); padding: 16px; border-radius: 8px; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Core Finding:</strong> Deterministic verification provides complete audit defensibility, because every adjudication decision corresponds to a specific, citeable published rule rather than a latent neural weight.
+                </div>
+            </article>
+
+            <!-- Paper 3 -->
+            <article style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 36px; margin-bottom: 36px; box-shadow: var(--shadow);">
+                <span class="badge badge-accent" style="margin-bottom: 12px;">Paper 03 &bull; Data Theory</span>
+                <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; color: var(--text);">
+                    Closed-World Verification in Healthcare Revenue Cycle Management
+                </h2>
+                <div style="display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                    <span><strong>Authors:</strong> HealthyClaim Engineering</span>
+                    <span>&bull;</span>
+                    <span><strong>Reviewed:</strong> September 2026</span>
+                    <span>&bull;</span>
+                    <span><strong>Topic:</strong> Mathematical Verification</span>
+                </div>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 16px;">
+                    <strong>Abstract:</strong> Under an open-world assumption, an AI model may extrapolate missing clinical facts (e.g., inferring that an injection was administered bilaterally when only a unilateral site is documented). In medical billing, this behavior constitutes unsupported billing and severe audit risk.
+                </p>
+                <p style="font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 20px;">
+                    We formalize the Closed-World Assumption (CWA) for clinical coding: an assertion is true if and only if it is explicitly grounded in the documented clinical narrative. If vital information (such as laterality, time, or physician involvement) is unstated, the system must fail-closed to a structured provider clarification rather than inferring the fact.
+                </p>
+                <div style="background: var(--bg); padding: 16px; border-radius: 8px; font-size: 0.9rem; color: var(--text-muted);">
+                    <strong>Core Finding:</strong> Closed-world verification guarantees zero unsupported billing, transforming automated claim generation from an audit liability into a defensible clinical intelligence tool.
+                </div>
+            </article>
+
+            <!-- Source Material & Disclaimer -->
+            <div style="background: var(--bg); padding: 32px; border-radius: 12px; border: 1px solid var(--border); margin-top: 40px;">
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;"><i class="fa-solid fa-circle-info text-primary"></i> Research Notice &amp; Scope</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    These papers reflect ongoing research by the HealthyClaim engineering team. Research methodologies and benchmarks utilize synthetic clinical data and published CMS statutory sources. These publications are for technical evaluation and peer discussion and do not constitute billing advice or official legal interpretations.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@healthyclaim.com">info@healthyclaim.com</a></li>
+                    <li><span class="legal-notice">Public preview research papers. Not billing advice.</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

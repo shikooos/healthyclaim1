@@ -1,0 +1,8 @@
+# Sensitive deployment scripts and local files
+.env
+.env.*
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db

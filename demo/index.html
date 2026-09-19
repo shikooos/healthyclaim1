@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Interactive Demo — Synthetic Clinical Case Studies</title>
+    <meta name="description" content="Explore HealthyClaim's public demo using 5 curated synthetic clinical cases. See how AI extracts clinical facts and deterministic rules evaluate NCCI, MUE, and claim artifacts.">
+    <meta name="keywords" content="medical coding demo, synthetic clinical notes, automated claim demo, NCCI test cases, MUE cap demo, SOAP note to claim">
+    <meta property="og:title" content="HealthyClaim | Interactive Demo">
+    <meta property="og:description" content="Explore 5 synthetic clinical case studies showing AI evidence extraction and deterministic claim adjudication.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/demo/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/demo/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Demo",
+          "item": "https://healthyclaim.com/demo/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Public Preview</span>
+            <span class="announcement-text"><strong>Synthetic Demos Only:</strong> Do not submit real Protected Health Information (PHI).</span>
+            <a href="/methodology/" class="announcement-link">Read Methodology <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/" class="active">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/methodology/" class="btn btn-outline-nav">Methodology</a>
+                <a href="/#contact" class="btn btn-primary nav-cta">Request Briefing</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-flask"></i> Public Research Demo</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                Synthetic Clinical Demonstration Cases
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                Explore how HealthyClaim processes realistic, synthetic clinical documentation. Review the extracted clinical facts, deterministic NCCI/MUE adjudication, and resulting draft claim artifacts.
+            </p>
+            <div style="margin-top: 16px; padding: 12px 16px; background: #FEF3C7; border-left: 4px solid #F59E0B; border-radius: 6px; font-size: 0.9rem; color: #92400E;">
+                <i class="fa-solid fa-triangle-exclamation"></i> <strong>Notice:</strong> All case studies below use synthetic, de-identified patient data. This demonstration platform is intended for technical evaluation and research.
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== DEMO CASES SECTION ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container">
+
+            <!-- Case 1: Office Visit -->
+            <article class="simulator-box" id="office-visit" style="margin-bottom: 48px;">
+                <div class="sim-left">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-file-medical"></i> Case 01: Office Visit &amp; Chronic Management</span>
+                        <span class="sim-badge">Synthetic: 62yo F &bull; Established</span>
+                    </div>
+                    <div class="sim-code-preview">
+                        <p class="code-line"><span class="kwd">CHIEF COMPLAINT:</span> Follow-up for Type 2 Diabetes and Hypertension; new symptom of foot numbness.</p>
+                        <p class="code-line"><span class="kwd">HISTORY:</span> 62yo female with poorly controlled T2DM (HbA1c 9.2%) and hypertension. Complains of progressive bilateral stocking-distribution paresthesias over past 3 months.</p>
+                        <p class="code-line"><span class="kwd">EXAM:</span> Reduced vibration sense bilaterally at 1st MTP joints. Monofilament exam abnormal in 4/10 sites bilaterally. BP 148/92 mmHg.</p>
+                        <p class="code-line"><span class="kwd">ASSESSMENT &amp; PLAN:</span> T2DM with diabetic polyneuropathy, uncontrolled. Started on Gabapentin 300mg QHS. Lisinopril increased to 20mg daily. Total encounter time: 38 minutes.</p>
+                    </div>
+                    <div class="sim-note-footer">
+                        <span><i class="fa-solid fa-check-double text-green"></i> Extracted Facts: T2DM with polyneuropathy (E11.40), Essential HTN (I10), Moderate MDM / 38 min (99214).</span>
+                    </div>
+                </div>
+                <div class="sim-right">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-clipboard-check"></i> Adjudication &amp; Evaluation</span>
+                        <span class="sim-status-pass"><i class="fa-solid fa-circle-check"></i> EVALUATED</span>
+                    </div>
+                    <div class="sim-results">
+                        <div class="sim-rules-grid">
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>E/M Code:</strong> 99214 (Level 4 Established)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>MDM Level:</strong> Moderate (1 chronic with progression + prescription drug mgmt)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Time Verification:</strong> 38 min supports 99214 (30-39 min band)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Diagnosis Linking:</strong> E11.40 (Primary), I10 (Secondary)</div>
+                        </div>
+                        <div class="sim-download-bar">
+                            <span class="download-label">Draft Artifacts:</span>
+                            <div class="download-btns">
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-pdf"></i> Draft CMS-1500</span>
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-code"></i> Draft EDI 837P</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 2: Knee Injection -->
+            <article class="simulator-box" id="knee-injection" style="margin-bottom: 48px;">
+                <div class="sim-left">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-file-medical"></i> Case 02: Knee Injection with E/M</span>
+                        <span class="sim-badge">Synthetic: 67yo M &bull; Medicare Part B</span>
+                    </div>
+                    <div class="sim-code-preview">
+                        <p class="code-line"><span class="kwd">CHIEF COMPLAINT:</span> Acute flare of right knee pain after fall; scheduled procedure review.</p>
+                        <p class="code-line"><span class="kwd">EXAM &amp; EVALUATION:</span> Evaluated acute exacerbation, reviewed new X-rays showing severe tricompartmental OA without fracture. High complexity MDM.</p>
+                        <p class="code-line"><span class="kwd">PROCEDURE:</span> Arthrocentesis with intermediate joint injection, right knee. Under sterile prep, 1% lidocaine local, aspirated 12ml cloudy fluid, injected Depo-Medrol 80mg (J1040).</p>
+                    </div>
+                    <div class="sim-note-footer">
+                        <span><i class="fa-solid fa-check-double text-green"></i> Extracted Facts: Arthrocentesis major joint (20610-RT), Separate E/M (99214-25), Depo-Medrol 80mg (J1040 x2).</span>
+                    </div>
+                </div>
+                <div class="sim-right">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-clipboard-check"></i> Adjudication &amp; Evaluation</span>
+                        <span class="sim-status-pass"><i class="fa-solid fa-circle-check"></i> EVALUATED</span>
+                    </div>
+                    <div class="sim-results">
+                        <div class="sim-rules-grid">
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Modifier 25:</strong> Applied to 99214 (Separate acute evaluation documented)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Anatomy Modifier:</strong> 20610-RT (Right knee verified)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Drug Units:</strong> J1040 (2 units = 80mg; billing unit = 40mg)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>NCCI Edit:</strong> 20610 / 99214 bypass supported with Modifier 25</div>
+                        </div>
+                        <div class="sim-download-bar">
+                            <span class="download-label">Draft Artifacts:</span>
+                            <div class="download-btns">
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-pdf"></i> Draft CMS-1500</span>
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-code"></i> Draft EDI 837P</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 3: Wound Care -->
+            <article class="simulator-box" id="wound-care" style="margin-bottom: 48px;">
+                <div class="sim-left">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-file-medical"></i> Case 03: Complex Wound Debridement</span>
+                        <span class="sim-badge">Synthetic: 74yo F &bull; Outpatient Clinic</span>
+                    </div>
+                    <div class="sim-code-preview">
+                        <p class="code-line"><span class="kwd">PROCEDURE:</span> Selective wound debridement including removal of non-viable tissue.</p>
+                        <p class="code-line"><span class="kwd">LOCATION &amp; DEPTH:</span> Left lower extremity venous ulcer. Subcutaneous tissue depth. Wound area measured: 36 sq cm.</p>
+                        <p class="code-line"><span class="kwd">TECHNIQUE:</span> Sharp excision using scalpel down to viable subcutaneous tissue. Hemostasis achieved.</p>
+                    </div>
+                    <div class="sim-note-footer">
+                        <span><i class="fa-solid fa-check-double text-green"></i> Extracted Facts: Debridement subcu first 20 sq cm (11042), Each additional 20 sq cm (11045 x1).</span>
+                    </div>
+                </div>
+                <div class="sim-right">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-clipboard-check"></i> Adjudication &amp; Evaluation</span>
+                        <span class="sim-status-pass"><i class="fa-solid fa-circle-check"></i> EVALUATED</span>
+                    </div>
+                    <div class="sim-results">
+                        <div class="sim-rules-grid">
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Primary Code:</strong> 11042 (First 20 sq cm debridement)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Add-On Code:</strong> 11045 (1 unit for remaining 16 sq cm)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>MUE Unit Cap:</strong> 11045 unit count within CMS practitioner cap</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>LCD Check:</strong> Venous ulcer etiology documented (I87.2)</div>
+                        </div>
+                        <div class="sim-download-bar">
+                            <span class="download-label">Draft Artifacts:</span>
+                            <div class="download-btns">
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-pdf"></i> Draft CMS-1500</span>
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-code"></i> Draft EDI 837P</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 4: Colonoscopy -->
+            <article class="simulator-box" id="colonoscopy" style="margin-bottom: 48px;">
+                <div class="sim-left">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-file-medical"></i> Case 04: Colonoscopy with Lesion Excision</span>
+                        <span class="sim-badge">Synthetic: 55yo M &bull; Screening converted to Diagnostic</span>
+                    </div>
+                    <div class="sim-code-preview">
+                        <p class="code-line"><span class="kwd">INDICATION:</span> Screening colonoscopy in average-risk 55yo male.</p>
+                        <p class="code-line"><span class="kwd">FINDINGS:</span> 8mm sessile polyp in ascending colon removed by snare polypectomy. 4mm hyperplastic-appearing polyp in sigmoid removed by cold biopsy forceps.</p>
+                        <p class="code-line"><span class="kwd">TECHNIQUE:</span> Cecum reached. Complete visualization. Two distinct techniques at two distinct anatomical sites.</p>
+                    </div>
+                    <div class="sim-note-footer">
+                        <span><i class="fa-solid fa-check-double text-green"></i> Extracted Facts: Snare polypectomy (45385), Biopsy separate site (45380-59), Screening modifier (PT/33).</span>
+                    </div>
+                </div>
+                <div class="sim-right">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-clipboard-check"></i> Adjudication &amp; Evaluation</span>
+                        <span class="sim-status-pass"><i class="fa-solid fa-circle-check"></i> EVALUATED</span>
+                    </div>
+                    <div class="sim-results">
+                        <div class="sim-rules-grid">
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Primary Procedure:</strong> 45385 (Snare removal ascending colon)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Secondary Procedure:</strong> 45380-XS / 59 (Biopsy at distinct site: sigmoid)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>NCCI Conflict Check:</strong> 45385 / 45380 PTP edit unbundled via documented separate site</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Screening Waiver:</strong> Modifier PT applied for Medicare cost-sharing waiver</div>
+                        </div>
+                        <div class="sim-download-bar">
+                            <span class="download-label">Draft Artifacts:</span>
+                            <div class="download-btns">
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-pdf"></i> Draft CMS-1500</span>
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-code"></i> Draft EDI 837P</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 5: Dermatology -->
+            <article class="simulator-box" id="dermatology" style="margin-bottom: 48px;">
+                <div class="sim-left">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-file-medical"></i> Case 05: Bilateral Dermatology Destruction</span>
+                        <span class="sim-badge">Synthetic: 68yo F &bull; Dermatology Clinic</span>
+                    </div>
+                    <div class="sim-code-preview">
+                        <p class="code-line"><span class="kwd">INDICATION:</span> Multiple premalignant actinic keratoses.</p>
+                        <p class="code-line"><span class="kwd">PROCEDURE:</span> Liquid nitrogen cryosurgery destruction of 4 discrete actinic keratoses on left dorsal forearm and 3 on right dorsal forearm (total 7 lesions).</p>
+                        <p class="code-line"><span class="kwd">POST-PROCEDURE:</span> Wound care instructions given. Sun protection advised.</p>
+                    </div>
+                    <div class="sim-note-footer">
+                        <span><i class="fa-solid fa-check-double text-green"></i> Extracted Facts: Premalignant destruction first lesion (17000), Additional 2-14 lesions (17003 x6).</span>
+                    </div>
+                </div>
+                <div class="sim-right">
+                    <div class="sim-pane-header">
+                        <span><i class="fa-solid fa-clipboard-check"></i> Adjudication &amp; Evaluation</span>
+                        <span class="sim-status-pass"><i class="fa-solid fa-circle-check"></i> EVALUATED</span>
+                    </div>
+                    <div class="sim-results">
+                        <div class="sim-rules-grid">
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Base Code:</strong> 17000 (First lesion destruction)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Add-On Code:</strong> 17003 (6 units for lesions 2 through 7)</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Bilateral Evaluation:</strong> 17000/17003 evaluated per lesion count, not bilateral modifier</div>
+                            <div class="sim-rule-item pass"><i class="fa-solid fa-check"></i> <strong>Diagnosis Linking:</strong> L57.0 (Actinic keratosis)</div>
+                        </div>
+                        <div class="sim-download-bar">
+                            <span class="download-label">Draft Artifacts:</span>
+                            <div class="download-btns">
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-pdf"></i> Draft CMS-1500</span>
+                                <span class="btn btn-sm btn-outline"><i class="fa-solid fa-file-code"></i> Draft EDI 837P</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@healthyclaim.com">info@healthyclaim.com</a></li>
+                    <li><span class="legal-notice">Public preview. Synthetic demonstration data only.</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Modifier 25 Explained — Clinical Evidence &amp; Deterministic Adjudication</title>
+    <meta name="description" content="A comprehensive guide to Modifier 25: documentation standards for significant, separately identifiable E/M services, NCCI interaction, audit defense, and deterministic verification.">
+    <meta name="keywords" content="modifier 25 medical billing, modifier 25 documentation rules, significant separately identifiable EM, modifier 25 NCCI, automated modifier 25 evaluation">
+    <meta property="og:title" content="HealthyClaim | Modifier 25 Explained">
+    <meta property="og:description" content="Technical guide to Modifier 25 documentation standards, NCCI interaction, and deterministic verification.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/modifier-25/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/modifier-25/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Modifier 25",
+          "item": "https://healthyclaim.com/modifier-25/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Technical Reference</span>
+            <span class="announcement-text"><strong>Authoritative Reference:</strong> Modifier 25 Documentation &amp; Evaluation Logic.</span>
+            <a href="/methodology/" class="announcement-link">View Pipeline <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-book-bookmark"></i> Coding Policy Reference</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                Modifier 25 Explained
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                Significant, separately identifiable Evaluation and Management (E/M) service documentation requirements, NCCI unbundling bypass criteria, and audit defensibility.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Written by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Reviewed by:</strong> HealthyClaim Billing Research</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Last Updated:</strong> September 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container" style="max-width: 900px;">
+            
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">1. What Is Modifier 25?</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    <strong>Modifier 25</strong> indicates a <em>"Significant, Separately Identifiable Evaluation and Management Service by the Same Physician or Other Qualified Health Care Professional on the Same Day of the Procedure or Other Service."</em>
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Under Medicare rules, every surgical or procedural code includes an inherent pre-procedure, intra-procedure, and post-procedure evaluation. Modifier 25 communicates to the payer that the provider performed a separate clinical evaluation above and beyond the normal pre-procedure work.
+                </p>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">2. Mandatory Documentation Criteria</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    To withstand post-payment payer audits, clinical documentation must satisfy three key tests:
+                </p>
+                
+                <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--text);">
+                        <li><strong>Distinct Work Test:</strong> The clinical documentation must demonstrate meaningful cognitive work separate from the procedural decision (e.g., managing a chronic comorbid condition, addressing an unexpected acute symptom, or conducting an extensive differential diagnosis).</li>
+                        <li><strong>Independent Stand-Alone Record:</strong> If the procedural notes were mentally redacted from the chart, the remaining documentation must independently substantiate the billed E/M level (MDM complexity or qualifying encounter time).</li>
+                        <li><strong>Diagnosis Independence Not Required:</strong> Although different ICD-10-CM codes strengthen audit defense, official CMS guidelines state that a different diagnosis code is <em>not required</em> if the E/M service was genuinely separate.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">3. Audit Risk &amp; Common Pitfalls</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    Modifier 25 is among the most heavily scrutinized modifiers by Medicare Recovery Audit Contractors (RAC) and commercial Special Investigation Units (SIU):
+                </p>
+                <ol style="padding-left: 20px; line-height: 1.8; color: var(--text); margin-bottom: 16px;">
+                    <li><strong>Routine Minor Procedures:</strong> Appending Modifier 25 to a planned suture removal, cast change, or routine injection when no distinct medical decision-making took place.</li>
+                    <li><strong>LLM Over-Application:</strong> Probabilistic coding tools that automatically tack on Modifier 25 simply because an E/M and procedure coexist in the same note, without verifying separate clinical assertions.</li>
+                </ol>
+            </section>
+
+            <section style="margin-bottom: 40px;">
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">4. HealthyClaim's Deterministic Approach</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text); margin-bottom: 16px;">
+                    HealthyClaim protects providers from both under-billing and audit exposure:
+                </p>
+                <div style="background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 20px; border-radius: 6px; margin-bottom: 16px;">
+                    <p style="margin: 0; line-height: 1.7; color: var(--text);">
+                        <strong>Fact Extraction:</strong> The linguistic model parses documented clinical assertions, separating procedural narrative sentences from cognitive evaluation sentences.<br>
+                        <strong>Stand-Alone MDM Adjudication:</strong> The deterministic engine computes the E/M level exclusively from the non-procedural facts.<br>
+                        <strong>Fail-Closed Gate:</strong> If the E/M service is not documented as separate, the system suppresses Modifier 25 and generates a clarification notice instead of submitting an unsupportable claim line.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Source & Limitations -->
+            <div style="background: var(--bg); padding: 24px; border-radius: 8px; border: 1px solid var(--border); margin-top: 40px;">
+                <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-scale-balanced text-primary"></i> Authoritative Source Scope</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                    <strong>Source Scope:</strong> CMS Medicare Claims Processing Manual (Pub. 100-04, Chapter 12, §30.6.6); CPT Coding Guidelines (American Medical Association).<br>
+                    <strong>Disclaimer:</strong> This technical reference is for demonstration and research purposes. Always verify documentation against current payer policies.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Topic Clusters</h4>
+                <ul>
+                    <li><a href="/ncci/">NCCI Edits</a></li>
+                    <li><a href="/mue/">MUE Caps</a></li>
+                    <li><a href="/modifier-25/">Modifier 25</a></li>
+                    <li><a href="/modifier-59/">Modifier 59</a></li>
+                    <li><a href="/cms-1500/">CMS-1500</a></li>
+                    <li><a href="/837p/">EDI 837P</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

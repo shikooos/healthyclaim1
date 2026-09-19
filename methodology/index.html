@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyClaim | Verification Methodology — AI Evidence Extraction &amp; Deterministic Adjudication</title>
+    <meta name="description" content="Explore HealthyClaim's 5-stage verification methodology: separating linguistic clinical evidence extraction from deterministic rule adjudication for medical coding and claim generation.">
+    <meta name="keywords" content="medical coding methodology, deterministic verification, AI evidence extraction, NCCI adjudication, MUE caps, clinical documentation coding">
+    <meta property="og:title" content="HealthyClaim | Verification Methodology">
+    <meta property="og:description" content="How AI evidence extraction and deterministic rule adjudication work together to produce verifiable, audit-traceable claim artifacts.">
+    <meta property="og:image" content="https://healthyclaim.com/og-image.png">
+    <meta property="og:url" content="https://healthyclaim.com/methodology/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://healthyclaim.com/methodology/">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://healthyclaim.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Methodology",
+          "item": "https://healthyclaim.com/methodology/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===================== TOP ANNOUNCEMENT ===================== -->
+    <div class="announcement-bar">
+        <div class="container announcement-inner">
+            <span class="pulse-tag"><i class="fa-solid fa-flask"></i> Public Preview</span>
+            <span class="announcement-text"><strong>Research &amp; Demonstration:</strong> HealthyClaim Verification Methodology Architecture.</span>
+            <a href="/demo/" class="announcement-link">Explore Interactive Demo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar" id="top">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/methodology/" class="active">Methodology</a></li>
+                <li><a href="/demo/">Demo</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/#simulator">Simulator</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="/demo/" class="btn btn-primary nav-cta">Test Demo</a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <header class="section" style="background: var(--bg); padding: 60px 0 40px; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <span class="badge badge-primary"><i class="fa-solid fa-compass-drafting"></i> Architecture Specification</span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 16px 0 12px; color: var(--text);">
+                HealthyClaim Verification Methodology
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.6;">
+                How AI evidence extraction and deterministic rule adjudication work together to produce verifiable, audit-traceable claim artifacts without black-box guesswork.
+            </p>
+            <div style="display: flex; gap: 24px; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); flex-wrap: wrap;">
+                <span><i class="fa-solid fa-user-pen text-primary"></i> <strong>Written by:</strong> HealthyClaim Engineering</span>
+                <span><i class="fa-solid fa-clipboard-check text-green"></i> <strong>Reviewed by:</strong> HealthyClaim Billing Research</span>
+                <span><i class="fa-solid fa-calendar text-accent"></i> <strong>Last Updated:</strong> September 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== 5-STAGE PIPELINE DETAIL ===================== -->
+    <main class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 48px;">
+                <span class="badge badge-accent">5-Stage Pipeline</span>
+                <h2 class="section-title">The Evidence-First Adjudication Lifecycle</h2>
+                <p class="section-subtitle">
+                    Every draft claim artifact is constructed through five strictly bounded stages, ensuring that probabilistic models never dictate final billing truth.
+                </p>
+            </div>
+
+            <div class="accuracy-layers-list">
+                <!-- Stage 1 -->
+                <div class="layer-card">
+                    <div class="layer-num">01</div>
+                    <div class="layer-content">
+                        <div class="layer-tag">Stage 1 &bull; Contextual Knowledge Retrieval</div>
+                        <h3>Domain, Specialty &amp; Payer Scoping</h3>
+                        <p>
+                            Prior to linguistic analysis, the system retrieves relevant clinical coding criteria, specialty guidelines, and applicable payer policies. This establishes a bounded context for evidence extraction rather than querying an unconstrained model.
+                        </p>
+                        <ul style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                            <li>Retrieval of applicable CMS NCCI edit tables for the provider specialty.</li>
+                            <li>Mapping of relevant Medicare Local Coverage Determinations (LCDs).</li>
+                            <li>Loading Medically Unlikely Edit (MUE) practitioner caps for candidate code families.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="layer-card">
+                    <div class="layer-num">02</div>
+                    <div class="layer-content">
+                        <div class="layer-tag">Stage 2 &bull; Bounded Linguistic Extraction</div>
+                        <h3>Clinical Fact Parsing &amp; Assertion Verification</h3>
+                        <p>
+                            The AI model is strictly confined to extracting verifiable clinical facts from unstructured documentation (SOAP notes, H&amp;P charts, operative reports). The model does not propose billing codes at this stage; it extracts structured observations.
+                        </p>
+                        <ul style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                            <li><strong>Assertion Status:</strong> Distinguishes confirmed conditions from historical, family, or ruled-out diagnoses.</li>
+                            <li><strong>Anatomical Specificity:</strong> Extracts laterality (right, left, bilateral) and specific anatomical structures.</li>
+                            <li><strong>Encounter Parameters:</strong> Captures face-to-face time, medical decision-making (MDM) complexity markers, and procedure details.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="layer-card">
+                    <div class="layer-num">03</div>
+                    <div class="layer-content">
+                        <div class="layer-tag">Stage 3 &bull; Closed-World Candidate Mapping</div>
+                        <h3>Code Candidate Proposal via Authoritative Sets</h3>
+                        <p>
+                            Extracted clinical facts are mapped to candidate standard codes (CPT, HCPCS, ICD-10-CM) using verified nomenclature. Every candidate code must point directly to documented supporting evidence in the clinical text.
+                        </p>
+                        <ul style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                            <li>Zero hallucinated codes: candidates must exist in authoritative code sets.</li>
+                            <li>Diagnosis pointers: primary and secondary ICD-10-CM codes mapped to procedural indications.</li>
+                            <li>Uncertainty surfacing: ambiguous documentation triggers structured clarification requests.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="layer-card">
+                    <div class="layer-num">04</div>
+                    <div class="layer-content">
+                        <div class="layer-tag">Stage 4 &bull; Deterministic Adjudication</div>
+                        <h3>NCCI, MUE &amp; Coverage Rule Execution</h3>
+                        <p>
+                            All candidate codes enter a deterministic evaluation engine written in compiled code with zero LLM involvement. Rules are executed against official CMS NCCI edits, MUE tables, and coverage criteria.
+                        </p>
+                        <ul style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                            <li><strong>NCCI PTP Conflict Resolution:</strong> Identifies Column 1 / Column 2 edits and evaluates correct coding modifier indicators (CCMI).</li>
+                            <li><strong>Modifier Adjudication:</strong> Evaluates factual justification for Modifier 25 (separate E/M), Modifier 59 / X{EPSU}, and Modifier 50.</li>
+                            <li><strong>MUE Cap Enforcement:</strong> Restricts billed units to published practitioner and outpatient hospital limits.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stage 5 -->
+                <div class="layer-card">
+                    <div class="layer-num">05</div>
+                    <div class="layer-content">
+                        <div class="layer-tag">Stage 5 &bull; Draft Artifact Generation</div>
+                        <h3>CMS-1500 &amp; ANSI EDI 837 Formatting for Evaluation</h3>
+                        <p>
+                            Once adjudicated, the platform outputs standardized claim artifacts formatted for testing, workflow integration, and pre-clearinghouse review.
+                        </p>
+                        <ul style="margin-top: 12px; font-size: 0.95rem; color: var(--text-muted); padding-left: 20px;">
+                            <li>Draft CMS-1500 PDF with box-by-box clinical field mapping.</li>
+                            <li>Draft ANSI ASC X12 EDI 837P transaction files structured per standard 5010 loops.</li>
+                            <li>Detailed validation summary citing each applied rule and evidence link.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SOURCE MATERIAL & LIMITATIONS ===================== -->
+            <div style="margin-top: 60px; background: var(--bg); padding: 32px; border-radius: 12px; border: 1px solid var(--border);">
+                <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;"><i class="fa-solid fa-scale-balanced text-primary"></i> Source Scope &amp; Legal Disclaimer</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+                    <strong>Source Scope:</strong> The deterministic adjudication engine references published CMS National Correct Coding Initiative (NCCI) Policy Manuals, CMS Medically Unlikely Edit (MUE) datasets, Medicare National and Local Coverage Determinations (NCD/LCD), and Medicare Claims Processing Manual (CMS Pub. 100-04).
+                </p>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+                    <strong>Limitations:</strong> HealthyClaim is a research platform in public preview. Artifacts generated by the platform are drafts intended for evaluation, simulation, and workflow testing. The platform does not provide legal, medical, or payer-specific billing advice. Final coding and billing determinations remain the legal responsibility of certified healthcare providers and medical coders.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-brand-col">
+                <img src="/healthy-claim-logo.svg" alt="HealthyClaim" class="footer-logo">
+                <p class="footer-tagline">
+                    <strong>HealthyClaim:</strong> Healthcare billing intelligence and research platform in public preview. AI-assisted clinical evidence extraction with deterministic verification.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/methodology/">Methodology</a></li>
+                    <li><a href="/demo/">Demo</a></li>
+                    <li><a href="/research/">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@healthyclaim.com">info@healthyclaim.com</a></li>
+                    <li><span class="legal-notice">Public preview. Not legal or medical advice.</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 HealthyClaim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
